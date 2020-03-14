@@ -12,8 +12,29 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
     }
+    
+    @IBOutlet weak var nameField: UITextField!
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        let resultViewController:ResultViewController = segue.destination as! ResultViewController
+        
+        resultViewController.name = nameField.text!
+    }
+    
+    
+    
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        nameField.text = ""
+    }
+    
+    
+    
+    
 
 
 }
